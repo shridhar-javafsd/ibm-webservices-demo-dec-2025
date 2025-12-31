@@ -144,6 +144,8 @@
 // //solution 3 - async await   
 // ======================================
 
+// 1. function with Promise object only with resolve 
+
 // const getMessage = () => {
 //     return new Promise((res) => {
 //         setTimeout(() => {
@@ -159,17 +161,28 @@
 
 // consumeMessage();
 
+// 1. function with Promise object with resolve and reject 
+
 const getMessage = () => {
-    return new Promise((res) => {
+    return new Promise((res, rej) => {
+        let isDataAvailable = true; // true // false 
         setTimeout(() => {
-            res({ message: 'How are you?' });
+            if (isDataAvailable)
+                res({ message: 'How are you?' });
+            else
+                rej({ error: 'Data not found!' });
         }, 2000);
     });
 }
 
 const consumeMessage = async () => {
-    const data = await getMessage();
-    console.log(data.message);
+    try {
+        const data = await getMessage();
+        console.log(data.message);
+    }
+    catch (err) {
+        console.log(err.error);
+    }
 };
 
 consumeMessage();
