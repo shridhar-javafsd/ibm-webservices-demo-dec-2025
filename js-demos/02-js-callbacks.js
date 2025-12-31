@@ -98,41 +98,78 @@
 
 // getMessage((param) => { console.log(param.message);});
 
+// // ======================================
+// // //solution 2 - Promise  
+// // ======================================
+
+// // // java 
+// // Employee obj = new Employee();
+// // Employee obj = new Employee(101, "Sonu", 50.75);
+// // JavaScript
+// // const obj = new Promise();
+// // const obj = new Promise(arg1, arg2);
+// // const obj = new Promise(() => {}); 
+// // const obj = new Promise((arg1, arg2) => {}); 
+// // return new Promise((resolve, reject) => { });
+
+// const getMessage = () => {
+//     return new Promise((res, rej) => {
+//         let isDataAvailable = false; // true // false 
+//         setTimeout(() => {
+//             if (isDataAvailable)
+//                 res({ message: 'How are you?' });
+//             else
+//                 rej({ error: 'Data not found!' });
+//         }, 2000);
+//     });
+// }
+
+// // getMessage().then().catch();
+// // getMessage().then(() => {}).catch(() => {});
+// // getMessage().then((response) => { console.log(response); }).catch((error) => { console.log(error); });
+
+// getMessage()
+//     .then((res) => {
+//         console.log(res.message);
+//     })
+//     .catch(
+//         (err) => {
+//             console.log(err.error);
+//         })
+//     .finally((arg) => {
+//         console.log('Done!');
+//     });
+
 // ======================================
-// //solution 2 - Promise  
+// //solution 3 - async await   
 // ======================================
 
-// // java 
-// Employee obj = new Employee();
-// Employee obj = new Employee(101, "Sonu", 50.75);
-// JavaScript
-// const obj = new Promise();
-// const obj = new Promise(arg1, arg2);
-// const obj = new Promise(() => {}); 
-// const obj = new Promise((arg1, arg2) => {}); 
-// return new Promise((resolve, reject) => { });
+// const getMessage = () => {
+//     return new Promise((res) => {
+//         setTimeout(() => {
+//             res({ message: 'How are you?' });
+//         }, 2000);
+//     });
+// }
+
+// const consumeMessage = async () => {
+//     const data = await getMessage();
+//     console.log(data.message);
+// };
+
+// consumeMessage();
 
 const getMessage = () => {
-    return new Promise((resolve, reject) => {
-        let isDataAvailable = false; // true // false 
+    return new Promise((res) => {
         setTimeout(() => {
-            if (isDataAvailable)
-                resolve({ message: 'How are you?' });
-            else
-                reject({ error: 'Data not found!' });
+            res({ message: 'How are you?' });
         }, 2000);
     });
 }
 
-// getMessage().then().catch();
-// getMessage().then(() => {}).catch(() => {});
-// getMessage().then((response) => { console.log(response); }).catch((error) => { console.log(error); });
+const consumeMessage = async () => {
+    const data = await getMessage();
+    console.log(data.message);
+};
 
-getMessage()
-    .then((response) => {
-        console.log(response.message);
-    })
-    .catch(
-        (error) => {
-            console.log(error.error);
-        });
+consumeMessage();
