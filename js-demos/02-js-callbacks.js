@@ -102,14 +102,37 @@
 // //solution 2 - Promise  
 // ======================================
 
-const getMessage = (arg) => {
-    // delay due to database connection 
-    setTimeout(() => {
-        arg({ message: 'How are you?' });
-    }, 2000);
+// // java 
+// Employee obj = new Employee();
+// Employee obj = new Employee(101, "Sonu", 50.75);
+// JavaScript
+// const obj = new Promise();
+// const obj = new Promise(arg1, arg2);
+// const obj = new Promise(() => {}); 
+// const obj = new Promise((arg1, arg2) => {}); 
+// return new Promise((resolve, reject) => { });
+
+const getMessage = () => {
+    return new Promise((resolve, reject) => {
+        let isDataAvailable = false; // true // false 
+        setTimeout(() => {
+            if (isDataAvailable)
+                resolve({ message: 'How are you?' });
+            else
+                reject({ error: 'Data not found!' });
+        }, 2000);
+    });
 }
 
-// getMessage(() => {});
-// getMessage((param) => {});
+// getMessage().then().catch();
+// getMessage().then(() => {}).catch(() => {});
+// getMessage().then((response) => { console.log(response); }).catch((error) => { console.log(error); });
 
-getMessage((param) => { console.log(param.message);});
+getMessage()
+    .then((response) => {
+        console.log(response.message);
+    })
+    .catch(
+        (error) => {
+            console.log(error.error);
+        });
