@@ -1,7 +1,7 @@
 {
-  "name": "ibm-nodejs-demo",
+  "name": "ibm-soap-demo",
   "version": "1.0.0",
-  "description": "NodeJS demo project for IBM trainees",
+  "description": "SOAP WS project for IBM trainees",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,7 +11,8 @@
   "author": "Vaman Rao Deshmukh",
   "license": "ISC",
   "dependencies": {
-    "express": "5.2.1"
+    "express": "^4.19.2",
+    "soap": "1.6.1"
   },
   "type": "module"
 }

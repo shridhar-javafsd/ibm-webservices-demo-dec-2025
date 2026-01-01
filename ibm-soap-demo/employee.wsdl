@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions 
+    name="EmployeeService"
+    targetNamespace="http://example.com/employee"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://example.com/employee"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <types>
+        <xsd:schema targetNamespace="http://example.com/employee">
+            <xsd:element name="getEmployeeRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="id" type="xsd:int"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="getEmployeeResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="id" type="xsd:int"/>
+                        <xsd:element name="name" type="xsd:string"/>
+                        <xsd:element name="salary" type="xsd:double"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+
+    <message name="GetEmployeeRequest">
+        <part name="parameters" element="tns:getEmployeeRequest"/>
+    </message>
+
+    <message name="GetEmployeeResponse">
+        <part name="parameters" element="tns:getEmployeeResponse"/>
+    </message>
+
+    <portType name="EmployeePortType">
+        <operation name="getEmployee">
+            <input message="tns:GetEmployeeRequest"/>
+            <output message="tns:GetEmployeeResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="EmployeeBinding" type="tns:EmployeePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getEmployee">
+            <soap:operation soapAction="getEmployee"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="EmployeeService">
+        <port name="EmployeePort" binding="tns:EmployeeBinding">
+            <soap:address location="http://localhost:3000/employee"/>
+        </port>
+    </service>
+</definitions>
