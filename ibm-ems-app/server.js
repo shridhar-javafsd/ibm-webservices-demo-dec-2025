@@ -1,9 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const { sequelize } = require('./models');
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/api/employees', require('./routes/employee.routes'));
 app.use('/api/departments', require('./routes/department.routes'));
