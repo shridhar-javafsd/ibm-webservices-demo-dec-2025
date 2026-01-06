@@ -16,3 +16,12 @@ calc.divNums(10, 20);
 calc3.addNums(10, 20);
 calc3.subNums(20, 10);
 calc3.divNums(10, 20);
+
+// const emp = {
+//     id: 101,
+//     name: 'Sonu',
+//     print1: function () { console.log(this.name); },
+//     print2: () => { console.log(this.name); }
+// };
+
+
