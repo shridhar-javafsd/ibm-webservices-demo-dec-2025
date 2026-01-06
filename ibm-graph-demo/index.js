@@ -56,12 +56,14 @@ const root = {
   }
 };
 
+// starting point for a request 
 app.use('/graphql', graphqlHTTP({
   schema,
   rootValue: root,
   graphiql: true
 }));
 
+// starting point of the app server 
 app.listen(4000, () => {
   console.log("Graph API running at http://localhost:4000/graphql");
 });
