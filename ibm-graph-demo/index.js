@@ -66,7 +66,7 @@ const root = {
       department: departments.find(d => d.id === emp.departmentId)
     }));
   },
-  
+
   // add Employee 
   addEmployee: ({ id, name, departmentId }) => {
     const emp = { id, name, departmentId };
@@ -94,12 +94,15 @@ app.listen(4000, () => {
 
 // get employee by id -
 // { "query": "{ employee(id: 102) { name salary department { name } } }" }
-// get all employees - 
+// get all employees -
 // { "query": "{ employees { name salary department { name } } }" }
-// add employee - 
+// add employee -
 // { "query": "mutation { addEmployee(id:104, name:\"Ponu\", departmentId:2) { id name department { name } } }" }
 
-
+// errors -
+// String cannot represent a non string value:
+// Unknown argument \"salary\" on field \"Mutation.addEmployee\".",
+// "Field \"addEmployee\" argument \"id\" of type \"Int!\" is required, but it was not provided.",
 
 
 
