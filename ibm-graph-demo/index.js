@@ -1,3 +1,6 @@
+// run - 
+// npm install --legacy-peer-deps
+// npm start 
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import { buildSchema } from 'graphql';
@@ -22,6 +25,9 @@ const schema = buildSchema(`
     employee(id: Int): Employee
     employees: [Employee]
   }
+  
+  t
+
 `);
 
 const employees = [
