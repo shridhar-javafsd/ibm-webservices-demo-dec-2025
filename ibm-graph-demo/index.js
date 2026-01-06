@@ -6,6 +6,7 @@ import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import { buildSchema } from 'graphql';
 
+const PORT = 5000;
 const app = express();
 
 const schema = buildSchema(`
@@ -87,8 +88,8 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 // starting point of the app server 
-app.listen(4000, () => {
-  console.log("Graph API running at http://localhost:4000/graphql");
+app.listen(PORT, () => {
+  console.log(`Graph API running at http://localhost:${PORT}/graphql`);
 });
 
 
