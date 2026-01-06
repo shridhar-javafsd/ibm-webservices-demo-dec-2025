@@ -1,6 +1,7 @@
 // run - 
 // npm install --legacy-peer-deps
 // npm start 
+
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import { buildSchema } from 'graphql';
@@ -22,11 +23,16 @@ const schema = buildSchema(`
   }
 
   type Query {
-    employee(id: Int): Employee
-    employees: [Employee]
+    employee(id: Int): Employee!
+    employees: [Employee!]!
   }
+
+    type Mutation {
+        addEmployee(id : Int!, name: String!, departmentId : Int!) : Employee!
+
+    }
   
-  t
+  
 
 `);
 
@@ -59,6 +65,17 @@ const root = {
       ...emp,
       department: departments.find(d => d.id === emp.departmentId)
     }));
+  },
+  
+  // add Employee 
+  addEmployee: ({ id, name, departmentId }) => {
+    const emp = { id, name, departmentId };
+    employees.push(emp);
+
+    return {
+      ...emp,
+      department: departments.find(d => d.id === departmentId)
+    };
   }
 };
 
@@ -75,79 +92,14 @@ app.listen(4000, () => {
 });
 
 
-// get employee by id - 
+// get employee by id -
 // { "query": "{ employee(id: 102) { name salary department { name } } }" }
-// get all employees
+// get all employees - 
 // { "query": "{ employees { name salary department { name } } }" }
+// add employee - 
+// { "query": "mutation { addEmployee(id:104, name:\"Ponu\", departmentId:2) { id name department { name } } }" }
 
 
 
 
-
-
-// import express from 'express';
-// import {graphqlHTTP} from 'express-graphql';
-// import { buildSchema } from 'graphql';
-
-// const app = express();
-
-// const schema = buildSchema(`
-
-//   type Department {
-//     id: Int
-//     name: String
-//   }
-
-//   type Employee {
-//     id: Int
-//     name: String
-//     salary: Int
-//     department: Department
-//   }
-
-//   type Query {
-//     employee(id: Int): Employee
-//   }
-// `);
-
-
-// const employees = [
-//     { id: 101, name: "Sonu", salary: 60000, departmentId: 1 },
-//     { id: 102, name: "Monu", salary: 70000, departmentId: 2 }
-// ];
-
-// const departments = [
-//     { id: 1, name: "IT" },
-//     { id: 2, name: "HR" }
-// ];
-
-
-// const root = {
-//     employee: ({ id }) => {
-//         const emp = employees.find(e => e.id === id);
-//         if (!emp) return null;
-
-//         return {
-//             ...emp,
-//             department: departments.find(d => d.id === emp.departmentId)
-//         };
-//     }
-// };
-
-// app.use('/employees', graphqlHTTP({
-//     schema,
-//     rootValue: root,
-//     graphiql: true   
-// }));
-
-// app.listen(4000, () => {
-//     console.log("Graph API running at http://localhost:4000/employees");
-// });
-
-
-// // POST Request to http://localhost:4000/employees - 
-
-// // {
-//   // "query": "{ employee(id: 101) { name salary department { name } } }"
-// // }
 
