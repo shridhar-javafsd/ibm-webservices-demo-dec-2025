@@ -5,31 +5,64 @@
 </head>
 
 <body>
+    <div>
+
+    </div>
+    <span>
+
+    </span>
+
+    <article>
+
+    </article>
+
     <h1>HTML Forms</h1>
     <p>Forms in HTML are used to capture inputted data from the user.</p>
     <h1>Register</h1>
-    <form onsubmit="printFormData();"> <!-- Is that Okay?  -->
 
-        <!-- Name, Username, Phone, Email, Aadhaar, Password -->
-        <!-- Apply validations  -->
-        <!-- Name required, Username 32 chars, Phone indian phone, Email, Aadhaar 12 digits , Password 8-32 chars, upper, lower, special etc -->
-        <!-- Use labels  -->
-        <label for=""></label>
-        <input type="text" id="name" name="" placeholder="Enter your full name" required autofocus />
-        <label for=""></label>
-        <input type="text" id="username">
-        <label for=""></label>
-        <input type="email" id="" name="email">
-        <label for=""></label>
-        <input type="tel" id="" name="phone">
-        <label for=""></label>
-        <input type="number" id="" name="aadhaar">
-        <label for=""></label>
-        <input type="password" id="" name="passsword">
+    <!-- <a href="" target="_blank"></a> -->
+
+s    <form onsubmit="return printFormData(); return false;">
+        <label>
+            Full Name:
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+        </label>
+        <br><br>
+        <label>
+            Username:
+            <input type="text" id="username" name="username" minlength="4" maxlength="32" placeholder="Enter a username"
+                required>
+        </label>
+        <br><br>
+        <label>
+            Email:
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </label>
+        <br><br>
+        <label>
+            Phone:
+            <input type="tel" id="phone" name="phone" pattern="[6-9]{1}[0-9]{9}" placeholder="Enter your phone"
+                required>
+        </label>
+        <br><br>
+        <label>
+            Aadhaar:
+            <input type="text" id="aadhaar" name="aadhaar" pattern="[0-9]{12}" placeholder="Enter your Aadhaar"
+                required>
+        </label>
+        <br><br>
+        <label>
+            Password:
+            <input type="password" id="password" name="password" minlength="8" maxlength="32"
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,32}" placeholder="Enter your password"
+                required>
+        </label>
+        <br><br>
+
         <input type="submit" value="Register">
     </form>
+    <script src="./forms.js"></script>
 
-    <script>'./forms.js'</script>
 </body>
 
 </html>
