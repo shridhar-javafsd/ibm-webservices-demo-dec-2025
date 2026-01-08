@@ -1,3 +1,3 @@
 
-const data = document.getElementById('message');
+const data = document.getElementById('demo').textContent;
 console.log(data);
