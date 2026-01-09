@@ -1,7 +1,6 @@
 
 // consume REST APIs 
 
-
 const apiUrl = 'https://jsonplaceholder.typicode.com/users/';
 let userId = 0;
 

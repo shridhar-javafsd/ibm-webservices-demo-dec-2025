@@ -9,14 +9,16 @@
     <h1>REST API Consume Demo</h1>
     <p>Consume REST APIs using JavaScript in HTML</p>
     <hr />
-    <div>
-        <input type="number" id="input">
+    <!-- <div>
+        <input type="number" id="input" autofocus>
         <button onclick="fetchUserData()">Click</button>
-    </div>
+    </div> -->
+
+    <form onsubmit="fetchUserData(); return false; ">
+        <input type="number" id="input" autofocus>
+        <input type="submit" value="Click" />
+    </form>
     <p>Username: <span id="username"></span> </p>
-
-
-
     <script src="script.js"></script>
 </body>
 
