@@ -6,7 +6,8 @@ const apiUrl = 'https://jsonplaceholder.typicode.com/users/';
 let userId = 0;
 
 const fetchUserData = () => {
-    
+    userId = document.getElementById('input').value;
+    console.log('userId', userId);
 
     fetch(`${apiUrl}${userId}`)
         .then((response) => {
