@@ -15,7 +15,6 @@ const fetchUserData = async () => {
         console.log(error);
         document.querySelector('#username').innerText = error;
     }
-
 };
 
 
