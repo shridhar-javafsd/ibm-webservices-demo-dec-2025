@@ -7,6 +7,7 @@ let userId = 0;
 
 const fetchUserData = () => {
     
+
     fetch(`${apiUrl}${userId}`)
         .then((response) => {
             console.log(response);
