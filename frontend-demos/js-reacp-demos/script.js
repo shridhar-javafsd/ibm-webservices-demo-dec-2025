@@ -1,22 +1,19 @@
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/users/';
-let userId = 0;
 
 const fetchUserData = async () => {
 
-    // userId = document.getElementById('input').value; // Old JS 
-    userId = document.querySelector('input').value; // ES6 JS 
+    const userId = document.querySelector('#userid').value;
     try {
-        userData = await fetch(`${apiUrl}${userId}`);
-        console.log(userData);
-        user = await userData.json();
+        const response = await fetch(`${apiUrl}${userId}`);
+        console.log(response);
+        user = await response.json();
         console.log(user);
-        document.getElementById("username").innerText = user.username;
-
+        document.querySelector('#username').innerText = user.username;
     }
     catch (error) {
         console.log(error);
-        document.getElementById("username").innerText = error;
+        document.querySelector('#username').innerText = error;
     }
 
 };
