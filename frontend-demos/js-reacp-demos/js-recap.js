@@ -36,13 +36,23 @@
 const employees = [
     { id: 101, name: 'Sonu', salary: 10.50 },
     { id: 102, name: 'Monu', salary: 11.75 },
-    { id: 103, name: 'Tonu', salary: 12.25 }
+    { id: 103, name: 'Tonu', salary: 14.25 },
+    { id: 104, name: 'Ponu', salary: 15.25 },
+    { id: 105, name: 'Gonu', salary: 13.50 }
 ];
 
-employees.forEach(e => console.log(e))
-// employees.filter
-// employees.map
+// // employees.forEach
+// employees.forEach(e => console.log(e));
+// // employees.filter
+// employees.filter(e => e.salary > 11).forEach(e => console.log(e));
+// // employees.map
+// employees.map(e => ({
+//     ...e,
+//     salary: e.salary * 1.10
+// })).forEach(e => console.log(e));
 // employees.reduce
-// employees.slice
+// console.log(employees.reduce((sum, e) => sum + e.salary, 0));
+// // employees.slice
+// employees.slice(0, 2).forEach(e => console.log(e));
 
 
