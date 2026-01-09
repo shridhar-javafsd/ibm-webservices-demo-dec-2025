@@ -40,5 +40,9 @@ const employees = [
 ];
 
 employees.forEach(e => console.log(e))
+// employees.filter
+// employees.map
+// employees.reduce
+// employees.slice
 
 
