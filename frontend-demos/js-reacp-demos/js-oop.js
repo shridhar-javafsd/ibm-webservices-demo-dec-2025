@@ -74,3 +74,14 @@ class ContractualEmployee extends Employee {
 
 const contraEmp = new ContractualEmployee(101, 'Sonu', 12.50);
 contraEmp.printData();
+
+
+// /repo 
+// 	/backend 
+// 		/SOAP - one API is enough - e.g. only rating service 
+// 		/GraphQL - one-two APIs are enough - payment, ride
+// 		/REST - most APIs - rest of all services 
+// 	/frontend 
+// 		/html-js-css - consume all the backend APIs here 
+// 		/angular - consume all the backend APIs here 
+		
