@@ -1,24 +1,24 @@
-// // // rest and spread in JS 
+// // // rest and spread in JS
 
-// // // // rest 
+// // // // rest
 
 // // // const nums = (...abc) => {
 // // //     console.log(abc);
-// // //     // code 
+// // //     // code
 // // // };
 
 // // // nums(10);
 // // // nums(10, 20);
 // // // nums(10, 20, 30);
 
-// // // spread 
+// // // spread
 
 // // // const nums = [10, 20, 30];
 // // // const moreNums = [...nums, 40, 50];
 // // // console.log(moreNums);
 
 // // // const nums2 = [10, 20, 30, 40, 50];
-// // // const [ten, twenty, ...remaining] = nums2; // rest or spread 
+// // // const [ten, twenty, ...remaining] = nums2; // rest or spread
 // // // console.log(remaining);
 
 // // const userData = { id: 101, name: 'Sonu', salary: 10.25 };
@@ -27,11 +27,11 @@
 // // const fullData = { ...userData, ...moreData };
 // // console.log(fullData);
 
-// // object destructuring in js ^ 
+// // object destructuring in js ^
 
-// // 
+// //
 
-// // keys, values of object and object array 
+// // keys, values of object and object array
 
 // const employees = [
 //     { id: 101, name: 'Sonu', salary: 10.50 },
@@ -66,8 +66,8 @@
 // // // employees.entries
 // // // employees.sort()
 // // // find
-// // // push 
-// // // pop 
+// // // push
+// // // pop
 
 // // const nums = [10, 20, 30];
 // // nums[9] = 100;
@@ -75,11 +75,26 @@
 // // nums[7] = 70;
 
 
-// // object methods - 
+// // object methods -
 
+// const employee = { id: 101, name: 'Sonu', salary: 10.50, email: 'sonu@gmail.com' };
 
+// console.log(employee);
+// employee.name = 'Sonuuuuu';
+// console.log(employee);
+// Object.freeze(employee);
+// // Object.seal(employee);
+// employee.name = 'Sonu';
+// employee.phone = 9876543210;
+// console.log(employee);
 
-const employee = { id: 101, name: 'Sonu', salary: 10.50 };
+// console.log(Object.keys(employee));
+// // console.log(Object.values(employee));
+// // console.log(Object.entries(employee));
 
-Object.freeze(employee);
-Object.
+// Object.entries(employee).forEach(([key, value]) => {
+//     console.log(key, value);
+// });
+
+// Object.values(employee).forEach(v => console.log(v));
+
