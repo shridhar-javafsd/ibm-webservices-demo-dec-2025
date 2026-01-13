@@ -1,14 +1,52 @@
-console.log("Hello world!");
+// console.log("Hello world!");
 
+// let salary: number = 10.50;
+// console.log('My salary is: ', salary);
+// salary = 12.25;
+// console.log('My salary is: ', salary);
+// // salary = false;
+// console.log('My salary is: ', salary);
 
+// using type annotation in - 
 
-// // TypeScript 
+// // 1. variable declaration 
+// let firstName: string = 'Sonu';
+// console.log(firstName);
+// // firstName = false;
+// console.log(firstName);
 
-// // JavaScript is dynamically types language == not typesafe 
+// // 2 . function params 
+// const addNums = (a: number, b: number)  => {
+//     console.log(a + b);
+// }
 
-// // Java - typesafe language 
+// // 3 . function return types  
+// const addNums = (a: number, b: number): void  => {
+//     console.log(a + b);
+// }
 
-// // double salary = 10.50; // 
+// // another example 
+// const addNums = (a: number, b: number): number => {
+//     return a + b;
+// }
+
+// // 4. array 
+// const values: number[] = [10, 20, 30, 40, 50];
+// values[0] = false;
+
+// 5. object properties -
+
+const employee = {
+    // complete 
+}
+
+// // TypeScript
+
+// // JavaScript is dynamically types language == not typesafe
+
+// // Java - typesafe language
+
+// // double salary = 10.50; //
 
 // let salary = 10.50;
 // console.log('My salary is: ', salary);
@@ -19,14 +57,14 @@ console.log("Hello world!");
 
 
 
-// // npm install --location=global typescript 
+// // npm install --location=global typescript
 
-// // write code in .ts file 
-// // transpile it with - 
-// // tsc filename.ts 
-// // gets - 
-// // filename.js 
-// // run - 
+// // write code in .ts file
+// // transpile it with -
+// // tsc filename.ts
+// // gets -
+// // filename.js
+// // run -
 // // node filename.js 
 
 
