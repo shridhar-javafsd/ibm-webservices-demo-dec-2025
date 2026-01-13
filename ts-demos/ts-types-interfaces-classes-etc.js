@@ -1,52 +1,23 @@
-var emp1 = {
-    id: 102,
-    name: 'Monu',
-    salary: 12.50
-};
-console.log(emp1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // interface - 1
-// interface Employee {
+// // type - 
+// type Employee = {
 //     id: number;
 //     name: string;
 //     salary: number;
 // };
-// const emp2: Employee = {
-//     id: 102,
-//     name: 'Monu',
-//     salary: 12.50
-// };
-// console.log(emp2);
-// // interface - 2
-// interface Employable {
-//     id: number;
-//     name: string;
-//     salary: number;
-//     getDetails(): string;
-// };
-// // class Employee implements Employable {
-// // }
+var Employee = /** @class */ (function () {
+    function Employee(id, name, salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    ;
+    Employee.prototype.getDetails = function () {
+        var data = "Id: ".concat(this.id, ", Name: ").concat(this.name, ", Salary: ").concat(this.salary);
+        return data;
+    };
+    return Employee;
+}());
+var emp = new Employee(101, 'Sonu', 10.25);
+console.log(emp.getDetails());
+var emp2 = new Employee(101, 'Sonu');
+console.log(emp2.getDetails());

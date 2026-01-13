@@ -39,9 +39,18 @@ class Employee implements Employable {
     name: string;
     salary: number;
 
+    constructor(id: number, name: string, salary: number) {
+        this.id = id; this.name = name; this.salary = salary;
+    };
+
     getDetails(): string {
-        let data: string = `${this.id} ${this.name} ${this.salary}`;
+        let data: string = `Id: ${this.id}, Name: ${this.name}, Salary: ${this.salary}`;
         return data;
     }
 }
+
+const emp = new Employee(101, 'Sonu', 10.25);
+console.log(emp.getDetails());
+const emp2 = new Employee(101, 'Sonu');
+console.log(emp2.getDetails());
 
