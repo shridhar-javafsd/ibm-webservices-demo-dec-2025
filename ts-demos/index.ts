@@ -112,3 +112,15 @@
 
 
 
+
+// npm install --location=global @angular/cli
+
+// ng new ibm-angular-demo 
+
+// cd ibm-angular-demo 
+
+// npm start 
+
+
+
+
